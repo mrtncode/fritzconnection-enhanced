@@ -3,11 +3,15 @@ requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "custom-fritzconnection"
+name = "custom_fritzconnection"
 version = "0.1.0"
 description = "Custom FritzConnection library for HA voicemail"
 readme = "README.md"
 requires-python = ">=3.11"
 
-[tool.setuptools]
-packages = ["custom_fritzconnection"]
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["custom_fritzconnection*"]
+exclude = [
+    "custom_fritzconnection.tests*",
+]

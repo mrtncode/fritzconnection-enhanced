@@ -146,3 +146,11 @@ class FritzTAM(AbstractLibraryBase):
         self._action("MarkMessage", NewIndex=tamIndex,
                      NewMessageIndex=messageIndex,
                      NewMarkedAsRead=markAsRead)
+
+
+    def set_enable(self, tam_index="0", enable=True):
+        """
+        Enable (True) or disable (False) the TAM at the given index.
+        """
+        new_enable = "1" if enable else "0"
+        return self._action("SetEnable", NewIndex=str(tam_index), NewEnable=new_enable)

@@ -7,13 +7,13 @@ from __future__ import annotations
 import datetime
 from collections import namedtuple
 
-from fritzconnection.core.processor import (
+from custom_fritzconnectioncore.processor import (
     Storage,
     InstanceAttributeFactory,
     processor,
     process_node,
 )
-from fritzconnection.core.utils import get_xml_root
+from custom_fritzconnectioncore.utils import get_xml_root
 
 from .fritzbase import AbstractLibraryBase
 from .fritztools import (

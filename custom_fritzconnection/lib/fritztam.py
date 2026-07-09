@@ -154,3 +154,16 @@ class FritzTAM(AbstractLibraryBase):
         """
         new_enable = "1" if enable else "0"
         return self._action("SetEnable", NewIndex=str(tam_index), NewEnable=new_enable)
+
+    def delete_message(self, tamIndex="0", messageIndex=None):
+        """
+        Deletes the message with messageIndex from the TAM with tamIndex.
+        """
+        if messageIndex is None:
+            raise TypeError("messageIndex must be provided")
+
+        return self._action(
+            "DeleteMessage",
+            NewIndex=str(tamIndex),
+            NewMessageIndex=str(messageIndex),
+        )

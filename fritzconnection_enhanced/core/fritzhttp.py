@@ -14,7 +14,7 @@ from http import HTTPStatus
 from http.client import HTTP_PORT
 from xml.etree import ElementTree as etree
 
-from custom_fritzconnection.core.exceptions import (
+from fritzconnection_enhanced.core.exceptions import (
     FritzHttpInterfaceError,
     FritzAuthorizationError,
 )

@@ -7,7 +7,7 @@ name = "fritzconnection-enhanced"
 version = "1.0.0"
 description = "Custom FritzConnection library for HA voicemail"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 
 [tool.setuptools.packages.find]
 where = ["."]

@@ -1,0 +1,38 @@
+name: Publish Package to PyPI
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build-and-publish:
+    name: Build and Publish
+    runs-on: ubuntu-latest
+    
+    environment:
+      name: pypi
+      url: https://pypi.org # Optional, links directly from GitHub UI
+
+    permissions:
+      id-token: write  # MANDATORY for Trusted Publishing / OIDC
+      contents: read   # Allows checking out the repository code
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install build tools
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install build
+
+      - name: Build package (Wheel and Source Distribution)
+        run: python -m build
+
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1

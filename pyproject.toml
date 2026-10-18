@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "fritzconnection-enhanced"
 version = "1.0.0"
-description = "Custom FritzConnection library for HA voicemail"
+description = "Enhanced version of the 'fritzconnection' package with features like voicemail/ TAM support"
 readme = "README.md"
 requires-python = ">=3.12"
 
